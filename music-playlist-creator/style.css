@@ -8,6 +8,7 @@ body {
 header{
     background-color: grey;
     padding: 0.1em 3em;
+    width: 100%;
 }
 
 footer{
@@ -20,11 +21,11 @@ footer{
 }
 .playlist-cards{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: 16px;
     padding: 16px;
-
 }
+
 
 .playlist-card{
     background-color: white;
@@ -35,7 +36,76 @@ footer{
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
 }
+
+.playlist-card:hover{
+    background-color: #fdf6ee;
+}
 .like-button{
     font-size: 14px;
     color: red
+}
+
+.modal-overlay{
+    background-color:#fdf6ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content{
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    
+
+}
+
+.playlist-header{
+display: flex;
+align-items: center;
+gap: 16px;
+margin-bottom: 24px;
+}
+
+.playlist-header img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.songlist{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.song-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+
+}
+.song-info{
+    flex: 1;
+    margin-left: 12px
+}
+
+.song-item img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+
+}
+.song-title{
+    font-weight: bold;
+    margin-bottom: 2px;
 }
