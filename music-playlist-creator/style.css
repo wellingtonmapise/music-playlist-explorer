@@ -4,3 +4,38 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header{
+    background-color: grey;
+    padding: 0.1em 3em;
+}
+
+footer{
+    background-color: gray;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+}
+.playlist-cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+    padding: 16px;
+
+}
+
+.playlist-card{
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+}
+.like-button{
+    font-size: 14px;
+    color: red
+}
