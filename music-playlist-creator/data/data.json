@@ -1,0 +1,193 @@
+[
+  {
+    "playlistID": 2,
+    "playlist_name": "Upbeat Anthems",
+    "playlist_author": "DJ Energy",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 201,
+        "song_title": "High Spirits",
+        "artist": "The Energizers",
+        "album": "Vibrant",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 202,
+        "song_title": "Dance Fever",
+        "artist": "Rhythm Masters",
+        "album": "Vibrant",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+        {
+        "songID": 203,
+        "song_title": "Dance Fever",
+        "artist": "Rhythm Masters",
+        "album": "Vibrant",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+              {
+        "songID": 204,
+        "song_title": "Dance Fever",
+        "artist": "Rhythm Masters",
+        "album": "Vibrant",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 3,
+    "playlist_name": "Acoustic Sessions",
+    "playlist_author": "Strum & Sing",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 301,
+        "song_title": "Gentle Strings",
+        "artist": "Acoustic Duo",
+        "album": "Unplugged",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 302,
+        "song_title": "Harmony",
+        "artist": "Strum & Sing",
+        "album": "Unplugged",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 4,
+    "playlist_name": "Jazz Classics",
+    "playlist_author": "Smooth Jazz",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 401,
+        "song_title": "Blue Note",
+        "artist": "Jazz Legends",
+        "album": "Timeless",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 402,
+        "song_title": "Swing Time",
+        "artist": "Jazz Legends",
+        "album": "Timeless",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 5,
+    "playlist_name": "Rock Hits",
+    "playlist_author": "Rock On",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 501,
+        "song_title": "Electric Dreams",
+        "artist": "Rock Stars",
+        "album": "Loud & Proud",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 502,
+        "song_title": "Thunder Road",
+        "artist": "Rock Stars",
+        "album": "Loud & Proud",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 6,
+    "playlist_name": "Classical Moods",
+    "playlist_author": "Maestro",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 601,
+        "song_title": "Symphony No. 5",
+        "artist": "Beethoven",
+        "album": "Classics",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 602,
+        "song_title": "Clair de Lune",
+        "artist": "Debussy",
+        "album": "Classics",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 7,
+    "playlist_name": "Hip Hop Beats",
+    "playlist_author": "DJ Flow",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 701,
+        "song_title": "Street Vibes",
+        "artist": "MC Groove",
+        "album": "Urban",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 702,
+        "song_title": "Rhythm & Rhyme",
+        "artist": "MC Groove",
+        "album": "Urban",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  },
+  {
+    "playlistID": 8,
+    "playlist_name": "Electronic Waves",
+    "playlist_author": "DJ Pulse",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 0,
+    "songs": [
+      {
+        "songID": 801,
+        "song_title": "Neon Lights",
+        "artist": "Synth Masters",
+        "album": "Electric",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      },
+      {
+        "songID": 802,
+        "song_title": "Digital Dreams",
+        "artist": "Synth Masters",
+        "album": "Electric",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "0:00"
+      }
+    ]
+  }
+]
