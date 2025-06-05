@@ -95,7 +95,7 @@
     "playlist_name": "Rock Hits",
     "playlist_author": "Rock On",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 10,
     "songs": [
       {
         "songID": 501,

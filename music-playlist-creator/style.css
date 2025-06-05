@@ -151,3 +151,17 @@ margin-bottom: 24px;
 .fa-heart.liked {
     color: red;
 }
+
+#shuffle-button{
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    color:white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 14px;
+}
+#shuffle-button:hover{
+    background-color: #0056b3;
+}

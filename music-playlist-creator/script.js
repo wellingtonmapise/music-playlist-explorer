@@ -34,6 +34,17 @@ function displayPlaylists(data){
             </div>
             `;
 
+        const likeIcon = card.querySelector(".fa-heart")
+        const likeCount = card.querySelector(".like-count")
+
+        likeIcon.addEventListener("click",(event) =>{
+            event.stopPropagation();
+            likeIcon.classList.toggle("liked");
+            const isLiked = likeIcon.classList.contains("liked");
+            let count = parseInt(likeCount.textContent);
+            likeCount.textContent = isLiked ? count + 1 : count - 1;
+
+        });
         card.addEventListener("click",() =>{
             displayModal(playlist);
         });
@@ -90,3 +101,4 @@ modalOverlay.addEventListener("click",(event) =>{
         modalOverlay.classList.add("hidden");
     }
 });
+
