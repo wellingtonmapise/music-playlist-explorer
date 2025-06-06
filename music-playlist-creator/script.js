@@ -1,24 +1,28 @@
+let playlistState;
+
+//global variable for modalcontent
+const modal = document.querySelector(".modal-overlay");
+
 fetch("data/data.json")
     .then((response) => response.json())
     .then((data) =>{
-        console.log(data)
-        console.log(data[0])
-        displayPlaylists(data);
+        playlistState = data
+        displayPlaylists(playlistState);
     })
     .catch((error) =>{
         console.error("Error fetching data:", error);
     });
 
-function displayPlaylists(data){
+function displayPlaylists(playlistState){
     const container = document.querySelector(".playlist-cards");
     container.innerHTML = "";
 
-    if (!data|| data.length === 0){
+    if (!playlistState|| playlistState.length === 0){
         container.innerHTML = `<p>No playlists to display</p>`;
         return;
     }
 
-    data.forEach((playlist) => {
+    playlistState.forEach((playlist) => {
         const card = document.createElement("div");
         card.classList.add("playlist-card");
 
@@ -53,29 +57,24 @@ function displayPlaylists(data){
 
 }
 
-document.addEventListener("DOMContentLoaded",() => {
-    fetch("data/data.json")
-    .then((response) => response.json())
-    .then((data) =>{
-        console.log(data)
-        //displayModal(data[0]);
-    })
-    .catch((error) =>{
-        console.error("Error fetching data:", error);
-    });
-
-});
-
-
 function displayModal(playlist){
-    const modal = document.querySelector(".modal-overlay");
-
     //header
     modal.querySelector(".playlist-header img").src = playlist.playlist_art;
     modal.querySelector(".playlist-header h2").textContent = playlist.playlist_name;
     modal.querySelector(".playlist-header p").textContent = `Created by ${playlist.playlist_author}`;
-    //songs
 
+    document.getElementById("shuffle-button").addEventListener("click",() => {
+        const shuffledSongs = shuffleArray(playlist.songs);
+
+        const shuffledPlaylist = {
+            ...playlist,
+            songs: shuffledSongs
+        };
+        const modalContent = document.querySelector(".modal-content");
+        updateContent(shuffledPlaylist, modalContent);
+        
+
+    });
     const songList = modal.querySelector(".song-list");
     songList.innerHTML = "";
     playlist.songs.forEach(song =>{
@@ -101,4 +100,39 @@ modalOverlay.addEventListener("click",(event) =>{
         modalOverlay.classList.add("hidden");
     }
 });
+
+function updateContent(playlist,modalContent){
+    //header
+    modalContent.querySelector(".playlist-header img").src = playlist.playlist_art;
+    modalContent.querySelector(".playlist-header h2").textContent = playlist.playlist_name;
+    modalContent.querySelector(".playlist-header p").textContent = `Created by ${playlist.playlist_author}`;
+
+    //songs
+    const songList = modal.querySelector(".song-list");
+    songList.innerHTML = "";
+    playlist.songs.forEach(song =>{
+        const item = document.createElement("div");
+        item.classList.add("song-item");
+        item.innerHTML = `
+            <img src = "${song.cover_art}", alt = "song-cover", width = "50">
+            <div class="song-info">
+                <p class="song-title">${song.song_title}</p>
+                <p>${song.artist}<br> ${song.album}</p>
+            </div>
+            <p>${song.duration}</p>
+        `;
+        songList.appendChild(item);
+    });
+    modal.classList.remove("hidden");
+
+}
+
+function shuffleArray(arr){
+    shuffled = arr.slice();
+    for (let i = arr.length - 1; i >= 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
 
