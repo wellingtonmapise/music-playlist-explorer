@@ -4,7 +4,7 @@
     "playlistID": 9,
     "playlist_name": "Santan Dave Hits",
     "playlist_author": "UK Vibes",
-    "playlist_art": "https://picsum.photos/200",
+    "playlist_art": "assets/img/dave.png",
     "like_count": 25,
     "songs": [
       {
@@ -29,7 +29,7 @@
     "playlistID": 10,
     "playlist_name": "Central Cee Vibes",
     "playlist_author": "UK Drill",
-    "playlist_art": "https://picsum.photos/200",
+    "playlist_art": "assets/img/centralcee.png",
     "like_count": 18,
     "songs": [
       {
@@ -54,7 +54,7 @@
     "playlistID": 11,
     "playlist_name": "Drake Essentials",
     "playlist_author": "OVO Sound",
-    "playlist_art": "https://picsum.photos/200",
+    "playlist_art": "assets/img/drake.png",
     "like_count": 50,
     "songs": [
       {
@@ -77,9 +77,9 @@
   },
   {
     "playlistID": 2,
-    "playlist_name": "Upbeat Anthems",
+    "playlist_name": "GameOver",
     "playlist_author": "DJ Energy",
-    "playlist_art": "https://picsum.photos/200",
+    "playlist_art": "assets/img/game.png",
     "like_count": 0,
     "songs": [
       {
@@ -215,58 +215,5 @@
         "duration": "0:00"
       }
     ]
-  },
-  {
-    "playlistID": 7,
-    "playlist_name": "Hip Hop Beats",
-    "playlist_author": "DJ Flow",
-    "playlist_art": "https://picsum.photos/200",
-    "like_count": 11,
-    "songs": [
-      {
-        "songID": 701,
-        "song_title": "Street Vibes",
-        "artist": "MC Groove",
-        "album": "Urban",
-        "cover_art": "https://picsum.photos/200",
-        "duration": "0:00"
-      },
-      {
-        "songID": 702,
-        "song_title": "Rhythm & Rhyme",
-        "artist": "MC Groove",
-        "album": "Urban",
-        "cover_art": "https://picsum.photos/200",
-        "duration": "0:00"
-      }
-    ]
-  },
-  {
-    "playlistID": 8,
-    "playlist_name": "Electronic Waves",
-    "playlist_author": "DJ Pulse",
-    "playlist_art": "https://picsum.photos/200",
-    "like_count": 9,
-    "songs": [
-      {
-        "songID": 801,
-        "song_title": "Neon Lights",
-        "artist": "Synth Masters",
-        "album": "Electric",
-        "cover_art": "https://picsum.photos/200",
-        "duration": "0:00"
-      },
-      {
-        "songID": 802,
-        "song_title": "Digital Dreams",
-        "artist": "Synth Masters",
-        "album": "Electric",
-        "cover_art": "https://picsum.photos/200",
-        "duration": "0:00"
-      }
-    ]
   }
-
-
-
 ]
