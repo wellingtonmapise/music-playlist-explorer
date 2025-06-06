@@ -1,3 +1,4 @@
+let editingPlaylist = null;
 let playlistState;
 
 //global variable for modalcontent
@@ -21,26 +22,12 @@ function displayPlaylists(playlistState){
         container.innerHTML = `<p>No playlists to display</p>`;
         return;
     }
+    playlistState.forEach(displaySinglePlaylist);
 
-    playlistState.forEach((playlist) => {
-        const card = document.createElement("div");
-        card.classList.add("playlist-card");
+}
 
-        card.innerHTML = `
-            <img src="${playlist.playlist_art}" alt="playlist-card">
-            <div class="card-content">
-            <h2>${playlist.playlist_name}</h2>
-            <p>Created by ${playlist.playlist_author}</p>
-            <p class="like-container">
-            <i class="fa-regular fa-heart"></i>
-            <span class="like-count">${playlist.like_count || 0}</span>
-            </p>
-            </div>
-            `;
 
-        const likeIcon = card.querySelector(".fa-heart")
-        const likeCount = card.querySelector(".like-count")
-
+function likePlaylist(likeIcon,likeCount){
         likeIcon.addEventListener("click",(event) =>{
             event.stopPropagation();
             likeIcon.classList.toggle("liked");
@@ -49,14 +36,9 @@ function displayPlaylists(playlistState){
             likeCount.textContent = isLiked ? count + 1 : count - 1;
 
         });
-        card.addEventListener("click",() =>{
-            displayModal(playlist);
-        });
-        container.appendChild(card)
-    });
+
 
 }
-
 function displayModal(playlist){
     //header
     modal.querySelector(".playlist-header img").src = playlist.playlist_art;
@@ -81,7 +63,7 @@ function displayModal(playlist){
         const item = document.createElement("div");
         item.classList.add("song-item");
         item.innerHTML = `
-            <img src = "${song.cover_art}", alt = "song-cover", width = "50">
+            <img src = "${song.cover_art || assets/img/playlist.png}", alt = "song-cover", width = "50">
             <div class="song-info">
                 <p class="song-title">${song.song_title}</p>
                 <p>${song.artist}<br> ${song.album}</p>
@@ -114,7 +96,7 @@ function updateContent(playlist,modalContent){
         const item = document.createElement("div");
         item.classList.add("song-item");
         item.innerHTML = `
-            <img src = "${song.cover_art}", alt = "song-cover", width = "50">
+            <img src = "${song.cover_art || assets/img/playlist.png}", alt = "song-cover", width = "50">
             <div class="song-info">
                 <p class="song-title">${song.song_title}</p>
                 <p>${song.artist}<br> ${song.album}</p>
@@ -124,7 +106,6 @@ function updateContent(playlist,modalContent){
         songList.appendChild(item);
     });
     modal.classList.remove("hidden");
-
 }
 
 function shuffleArray(arr){
@@ -136,3 +117,145 @@ function shuffleArray(arr){
     return shuffled;
 }
 
+document.getElementById("add-song-btn").addEventListener("click", () => {
+    const songInput = document.createElement("div");
+    songInput.className = "song-input";
+    songInput.innerHTML = `
+        <input type="text" placeholder="Song Title" class="-form" required />
+        <input type="text" placeholder="Artist" class="song-artist" required /> 
+        <input type="text" placeholder="Duration" class="song-duration" required /> 
+    `
+    document.getElementById("songs-container").appendChild(songInput);
+});
+
+document.getElementById("playlist-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("playlist-name").value;
+    const author = document.getElementById("playlist-author").value;  
+    
+    const songs = Array.from(document.querySelectorAll(".song-input")).map( songDiv => {
+        return{
+            song_title: songDiv.querySelector(".song-title-form").value,
+            artist: songDiv.querySelector(".song-artist").value,
+            duration: songDiv.querySelector(".duration").value,
+        };
+    });
+
+    if (editingPlaylist){
+        editingPlaylist.playlist_name = name;
+        editingPlaylist.playlist_author = author;
+        editingPlaylist.songs = songs;
+        editingPlaylist = null;
+    }
+    else{
+    const newPlaylist = {
+        playlist_name: name,
+        playlist_author: author,
+        playlist_art: "assets/img/song.png",
+        like_count: 0,
+        songs: songs
+    };
+    playlistState.push(newPlaylist);
+    }
+
+   displayPlaylists(playlistState);
+   localStorage.setItem("myPlaylists", JSON.stringify(playlistState));
+
+   e.target.reset();
+   document.getElementById("songs-container").innerHTML = `
+    <div class="song-input"> 
+        <input placeholder="Song Title" class="song-title-form" required />
+        <input placeholder="Artist" class="song-artist" required /> 
+        <input placeholder="Duration" class="duration" required /> 
+    </div>
+   `;
+});
+
+function displaySinglePlaylist(playlist){
+    const container = document.querySelector(".playlist-cards");
+    const card = document.createElement("div");
+    card.className ="playlist-card";
+    card.innerHTML = `
+    <img src="${playlist.playlist_art}" alt="playlist-card">
+            <div class="card-content">
+            <h2>${playlist.playlist_name}</h2>
+            <p>Created by ${playlist.playlist_author}</p>
+            <div class="like-container">
+            <i class="fa-regular fa-heart"></i>
+            <span class="like-count">${playlist.like_count || 0}</span>
+            </div>
+            <button class ="delete-btn"> 🗑️ Delete </button>
+            <button class ="edit-btn"> ✏️ Edit </button>
+            </div>
+
+    `;
+    //like
+    const likeIcon = card.querySelector(".fa-heart");
+    const likeCount = card.querySelector(".like-count");
+    likePlaylist(likeIcon,likeCount);
+
+    card.addEventListener("click",() =>{
+    displayModal(playlist);
+    });
+    container.appendChild(card);
+    //delete
+    const deleteBtn = card.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click",(e) => {
+        e.stopPropagation();
+        card.remove();
+    });
+
+    //edit section
+    const editBtn = card.querySelector(".edit-btn");
+    editBtn.addEventListener("click",(e) => {
+        e.stopPropagation();
+
+        document.getElementById("playlist-name").value = playlist.playlist_name;
+        document.getElementById("playlist-author").value = playlist.playlist_author;
+
+        const songsContainer = document.getElementById("songs-container");
+        songsContainer.innerHTML ="";
+
+        playlist.songs.forEach(song=>{
+            const songInput = document.createElement("div");
+            songInput.className = "song-input";
+            songInput.innerHTML = `
+
+            <input class="song-title-form" value="${song.song_title}" />
+            <input class="song-artist" value="${song.artist}" /> 
+            <input class="duration" value="${song.duration}" />   
+            `;
+            songsContainer.appendChild(songInput);
+        });
+        editingPlaylist = playlist;
+});
+
+}
+
+document.getElementById("search-input").addEventListener("input", function(){
+
+    const query = this.value.toLowerCase();
+    const filteredPlaylists = playlistState.filter(playlist =>{
+        return(
+            playlist.playlist_name.toLowerCase().includes(query) || playlist.playlist_author.toLowerCase().includes(query)
+        );
+    });
+    displayPlaylists(filteredPlaylists);
+});
+
+
+document.getElementById("sort-select").addEventListener("change", function(){
+    const sortBy = this.value;
+    const sortedPlaylists = [...playlistState];
+
+    if (sortBy === "name"){
+        sortedPlaylists.sort((a,b) =>
+            a.playlist_name.toLowerCase().localeCompare(b.playlist_name.toLowerCase())
+    );
+    }
+    else if (sortBy === "likes") {
+        sortedPlaylists.sort((a,b) => b.like_count - a.like_count);
+    }
+    displayPlaylists(sortedPlaylists);
+});

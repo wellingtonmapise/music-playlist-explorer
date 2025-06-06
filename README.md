@@ -13,9 +13,9 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
 #### CORE FEATURES
 
 - [ ] **Display Playlists**
-  - [ ] Dynamically render playlists on the homepage using JavaScript.
-    - [ ] Playlists should be shown in grid view.
-    - [ ] Playlist images should be reasonably sized (at least 6 playlists on your laptop when full screen; large enough that the playlist components detailed in the next feature are legible).
+  - [x] Dynamically render playlists on the homepage using JavaScript.
+    -[x] Playlists should be shown in grid view.
+    - [x] Playlist images should be reasonably sized (at least 6 playlists on your laptop when full screen; large enough that the playlist components detailed in the next feature are legible).
   - [ ] Fetch data from a provided Javascript file and use it to create interactive playlist tiles.
 
 - [ ] **Playlist Components**
