@@ -2,20 +2,20 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background: linear-gradient(0.25turn, #030404, #f2f1f2, #030404);
     align-items: center;
     align-content: center;
+    
     
 }
 
 footer{
-    background-color: gray;
-    position: fixed;
+    /* background-color: gray; */
     bottom: 0;
     width: 100%;
     text-align: center;
     font-size: small;
-}
+} 
 
 .main{
     max-width: 1200px;
@@ -31,6 +31,8 @@ footer{
     gap: 30px;
     margin: 0 auto;
     padding: 20px;
+    background: linear-gradient(0.25turn, #1e201e, #f2f1f2, #1e201e);
+    border-radius: 16px;
     
 
 }
@@ -38,8 +40,8 @@ footer{
 .playlist-card{
     /* width: 300px;
     height:400px; */
-    background-color: white;
-    border: 1px solid #ccc;
+    background: linear-gradient(0.25turn, #1e201e, #f2f1f2, #1e201e);
+    /* border: 1px solid #ccc; */
     text-align: left;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -57,7 +59,7 @@ footer{
 }
 
 .playlist-card:hover{
-    background-color: #fdf6ee;
+    background: linear-gradient(0.25turn, #263926, #f2f1f2, #567156);
 }
 .like-button{
     font-size: 14px;
@@ -188,14 +190,14 @@ margin-bottom: 24px;
 
 .nav-header {
     font-weight: bold;
-    font-size: 20px
+    font-size: 20px;
 }
 .nav-bar{
     padding: 5px 10px;
     display: flex;
-    background-color: rgb(216, 211, 211);
+    background: linear-gradient(0.25turn, #afbdbd, #f2f1f2, #96bbbb);
     justify-content: space-between;
-    margin-bottom: 5px;
+    position: relative;
 }
 .nav-bar ul{
     display: flex;
@@ -215,6 +217,8 @@ margin-bottom: 24px;
     flex-wrap: wrap;
     gap:20px;
     flex-direction: column;
+    background-color: red;
+    background: linear-gradient(0.25turn, #030404, #f2f1f2, #030404);
 
 }
 
@@ -227,6 +231,7 @@ margin-bottom: 24px;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     text-align: center;
+    background: linear-gradient(0.25turn, #8db3b3, #f2f1f2, #0a4815);
 }
 
 #playlist-form input{
@@ -267,7 +272,6 @@ margin-bottom: 24px;
     display:flex;
     justify-content: center;
     margin-top: 40px;
-
 }
 
 .featured-layout{
@@ -278,9 +282,10 @@ margin-bottom: 24px;
     gap: 40px;
     max-width: 900px;
     justify-content: center;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    background: linear-gradient(0.25turn, #182222, #f2f1f2, #0a4815);
 }
 
 #featured-left img{
@@ -308,4 +313,31 @@ margin-bottom: 24px;
     padding: 8px 12px;
     font-size: 16px;
     border-radius:6px;
+}
+
+#create-new {
+  background-color: #090d09; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  position: fixed;
+}
+
+#create-new:hover {
+  background-color: #0f0b8d;
+}
+
+#create-new:active {
+  background-color: #3e8e41; 
+  transform: translateY(2px);
+}
+
+#create-new:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 207, 173, 0.5);
 }

@@ -63,7 +63,7 @@ function displayModal(playlist){
         const item = document.createElement("div");
         item.classList.add("song-item");
         item.innerHTML = `
-            <img src = "${song.cover_art || assets/img/playlist.png}", alt = "song-cover", width = "50">
+            <img src = "${song.cover_art || "assets/img/playlist.png"}", alt = "song-cover", width = "50">
             <div class="song-info">
                 <p class="song-title">${song.song_title}</p>
                 <p>${song.artist}<br> ${song.album}</p>
@@ -128,49 +128,65 @@ document.getElementById("add-song-btn").addEventListener("click", () => {
     document.getElementById("songs-container").appendChild(songInput);
 });
 
-document.getElementById("playlist-form").addEventListener("submit", function(e){
-    e.preventDefault();
+function handleFormSubmit(e) {
+  e.preventDefault();
 
-    const name = document.getElementById("playlist-name").value;
-    const author = document.getElementById("playlist-author").value;  
-    
-    const songs = Array.from(document.querySelectorAll(".song-input")).map( songDiv => {
-        return{
-            song_title: songDiv.querySelector(".song-title-form").value,
-            artist: songDiv.querySelector(".song-artist").value,
-            duration: songDiv.querySelector(".duration").value,
-        };
-    });
+  const name = document.getElementById("playlist-name").value;
+  const author = document.getElementById("playlist-author").value;
 
-    if (editingPlaylist){
-        editingPlaylist.playlist_name = name;
-        editingPlaylist.playlist_author = author;
-        editingPlaylist.songs = songs;
-        editingPlaylist = null;
-    }
-    else{
+  const songs = Array.from(document.querySelectorAll(".song-input")).map(songDiv => {
+    return {
+      song_title: songDiv.querySelector(".song-title-form").value,
+      artist: songDiv.querySelector(".song-artist").value,
+      duration: songDiv.querySelector(".duration").value,
+    };
+  });
+
+  if (editingPlaylist) {
+    editingPlaylist.playlist_name = name;
+    editingPlaylist.playlist_author = author;
+    editingPlaylist.songs = songs;
+    editingPlaylist = null;
+  } else {
     const newPlaylist = {
-        playlist_name: name,
-        playlist_author: author,
-        playlist_art: "assets/img/song.png",
-        like_count: 0,
-        songs: songs
+      playlist_name: name,
+      playlist_author: author,
+      playlist_art: "assets/img/song.png",
+      like_count: 0,
+      songs: songs
     };
     playlistState.push(newPlaylist);
-    }
+  }
 
-   displayPlaylists(playlistState);
-   localStorage.setItem("myPlaylists", JSON.stringify(playlistState));
+  displayPlaylists(playlistState);
+  localStorage.setItem("myPlaylists", JSON.stringify(playlistState));
 
-   e.target.reset();
-   document.getElementById("songs-container").innerHTML = `
+  e.target.reset();
+  document.getElementById("songs-container").innerHTML = `
     <div class="song-input"> 
-        <input placeholder="Song Title" class="song-title-form" required />
-        <input placeholder="Artist" class="song-artist" required /> 
-        <input placeholder="Duration" class="duration" required /> 
+      <input placeholder="Song Title" class="song-title-form" required />
+      <input placeholder="Artist" class="song-artist" required /> 
+      <input placeholder="Duration" class="duration" required /> 
     </div>
-   `;
+  `;
+
+  // Hide the form after submission
+  document.getElementById("playlist-form").classList.add("hidden");
+}
+
+function showForm() {
+  const formContent = document.getElementById("playlist-form");
+  formContent.classList.remove("hidden");
+}
+
+document.getElementById("playlist-form").addEventListener("submit", handleFormSubmit);
+
+document.getElementById("create-new").addEventListener("click", () => {
+  showForm();
 });
+
+
+
 
 function displaySinglePlaylist(playlist){
     const container = document.querySelector(".playlist-cards");
@@ -258,4 +274,15 @@ document.getElementById("sort-select").addEventListener("change", function(){
         sortedPlaylists.sort((a,b) => b.like_count - a.like_count);
     }
     displayPlaylists(sortedPlaylists);
+});
+
+function closeForm() {
+    const formContent = document.getElementById("playlist-form");
+    formContent.classList.add("hidden");
+}
+document.getElementById("create-new").addEventListener("click", () => {
+    showForm();
+});
+document.getElementById("close-form-btn").addEventListener("click", () => {
+    closeForm();
 });

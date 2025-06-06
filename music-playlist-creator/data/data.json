@@ -1,4 +1,80 @@
 [
+
+{
+    "playlistID": 9,
+    "playlist_name": "Santan Dave Hits",
+    "playlist_author": "UK Vibes",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 25,
+    "songs": [
+      {
+        "songID": 901,
+        "song_title": "Location",
+        "artist": "Santan Dave",
+        "album": "Psychodrama",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "3:36"
+      },
+      {
+        "songID": 902,
+        "song_title": "Black",
+        "artist": "Santan Dave",
+        "album": "Psychodrama",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "4:06"
+      }
+    ]
+  },
+  {
+    "playlistID": 10,
+    "playlist_name": "Central Cee Vibes",
+    "playlist_author": "UK Drill",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 18,
+    "songs": [
+      {
+        "songID": 1001,
+        "song_title": "Loading",
+        "artist": "Central Cee",
+        "album": "Wild West",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "2:53"
+      },
+      {
+        "songID": 1002,
+        "song_title": "Day in the Life",
+        "artist": "Central Cee",
+        "album": "Wild West",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "2:55"
+      }
+    ]
+  },
+  {
+    "playlistID": 11,
+    "playlist_name": "Drake Essentials",
+    "playlist_author": "OVO Sound",
+    "playlist_art": "https://picsum.photos/200",
+    "like_count": 50,
+    "songs": [
+      {
+        "songID": 1101,
+        "song_title": "God's Plan",
+        "artist": "Drake",
+        "album": "Scorpion",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "3:19"
+      },
+      {
+        "songID": 1102,
+        "song_title": "In My Feelings",
+        "artist": "Drake",
+        "album": "Scorpion",
+        "cover_art": "https://picsum.photos/200",
+        "duration": "3:37"
+      }
+    ]
+  },
   {
     "playlistID": 2,
     "playlist_name": "Upbeat Anthems",
@@ -190,4 +266,7 @@
       }
     ]
   }
+
+
+
 ]
