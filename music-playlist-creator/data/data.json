@@ -45,7 +45,7 @@
     "playlist_name": "Acoustic Sessions",
     "playlist_author": "Strum & Sing",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 20,
     "songs": [
       {
         "songID": 301,
@@ -70,7 +70,7 @@
     "playlist_name": "Jazz Classics",
     "playlist_author": "Smooth Jazz",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 30,
     "songs": [
       {
         "songID": 401,
@@ -120,7 +120,7 @@
     "playlist_name": "Classical Moods",
     "playlist_author": "Maestro",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 49,
     "songs": [
       {
         "songID": 601,
@@ -145,7 +145,7 @@
     "playlist_name": "Hip Hop Beats",
     "playlist_author": "DJ Flow",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 11,
     "songs": [
       {
         "songID": 701,
@@ -170,7 +170,7 @@
     "playlist_name": "Electronic Waves",
     "playlist_author": "DJ Pulse",
     "playlist_art": "https://picsum.photos/200",
-    "like_count": 0,
+    "like_count": 9,
     "songs": [
       {
         "songID": 801,
