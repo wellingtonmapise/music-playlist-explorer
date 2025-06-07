@@ -83,7 +83,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
       - [x] Title
       - [x] Artist
   - [x] The resulting playlist should display in the grid view.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
 
 - [x] **Edit Existing Playlists**
   - [x] Enable users to modify the details of existing playlists.
@@ -113,7 +113,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [x] Presses the Enter Key
     - [x] Clicks the Submit/Search Button 
   - [x] User can click the clear button. When clicked:
-    - [ ] All text in the text input field is deleted
+    - [x] All text in the text input field is deleted
     - [x] All playlists in the `data.json` file are displayed in a grid view
     - [x] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
       - [x] If users can add a playlist, added playlists should be included in search results.
