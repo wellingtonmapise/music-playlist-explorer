@@ -137,7 +137,7 @@ function handleFormSubmit(e) {
   const songs = Array.from(document.querySelectorAll(".song-input")).map(songDiv => {
     console.log(songDiv)
     return {
-      song_title: songDiv.querySelector(".song-title").value,
+      song_title: songDiv.querySelector(".song-title-form").value,
       artist: songDiv.querySelector(".song-artist").value,
       duration: songDiv.querySelector(".duration").value,
     };

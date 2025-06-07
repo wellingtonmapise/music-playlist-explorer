@@ -1,10 +1,9 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Unit Assignment: Music Playlist Explorer
 
 Submitted by: **Wellington Mapise**
 
 Estimated time spent: **#** 40
+
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site](https://music-playlist-explorer-uua3.onrender.com)
 
 ### Application Features
@@ -95,8 +94,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [x] Songs
   - [x] The playlist grid view and playlist detail modal should update to display any changes (see Required Features, Criterion 1 & 2).
   - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
-    - [ ] Editing all of a playlist's features (name, creator, AND songs)
-    - [ ] Editing some of a playlist's features (name, creator, OR songs) 
+    - [x] Editing all of a playlist's features (name, creator, AND songs)
+    - [x] Editing some of a playlist's features (name, creator, OR songs) 
 
 - [x] **Delete Playlists**
   - [x] Add a delete button to each playlist tile within the grid view.
@@ -117,9 +116,9 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [ ] All text in the text input field is deleted
     - [x] All playlists in the `data.json` file are displayed in a grid view
     - [x] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
-      - [ ] If users can add a playlist, added playlists should be included in search results.
-      - [ ] If users can edit a playlist, search results should reflect the latest edits to each playlist.
-      - [ ] If users can delete a playlist, deleted playlists should no longer be included in search results.
+      - [x] If users can add a playlist, added playlists should be included in search results.
+      - [x] If users can edit a playlist, search results should reflect the latest edits to each playlist.
+      - [x] If users can delete a playlist, deleted playlists should no longer be included in search results.
       - **Note:** You will not be graded on the implementation of this optional subfeature to keep your grade of this stretch feature independent of your implementation of other stretch features. However, we highly suggest including this in your implementation to model realistic behavior of real applications. 
 
 - [x] **Sorting Options**
