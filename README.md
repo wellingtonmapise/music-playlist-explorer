@@ -11,7 +11,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 #### CORE FEATURES
 
-- [ ] **Display Playlists**
+- [x] **Display Playlists**
   - [x] Dynamically render playlists on the homepage using JavaScript.
     -[x] Playlists should be shown in grid view.
     - [x] Playlist images should be reasonably sized (at least 6 playlists on your laptop when full screen; large enough that the playlist components detailed in the next feature are legible).
@@ -69,8 +69,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
   - [x] When the page is refreshed or reloaded, a new random playlist is displayed
     - For example, navigating to the all playlists page and then back to the featured playlist page should result in a new random playlist being displayed
     - Note that because your algorithm will not be truly random, it is possible that the same playlist will feature twice in a row. 
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once. 
-  - [ ] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons. 
+    - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once. 
+  - [x] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons. 
 
 #### STRETCH FEATURES
 
@@ -139,20 +139,20 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the labs were instrumental in helping me understand the project better, as much of it involved replicating and refining similar tasks. However, I felt somewhat unprepared for the shuffle feature, as it required external concepts like the Fisher-Yates algorithm.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+With more time, I would have enhanced the styling of my website and explored additional features beyond those outlined in the project. Specifically, I wanted to implement a proper navigation bar with options to create new playlists and sort them. Additionally, I aimed to include the ability to upload images when creating playlists.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+The demo went well overall, but I noticed that many peers had impressive styling. I plan to reach out to them to learn as much as I can and apply those techniques in my future projects.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- for images i used: https://picsum.photos/200
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+shoutout to all the tech fellows the instructors and cohort 2!

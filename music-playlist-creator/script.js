@@ -1,7 +1,7 @@
 let editingPlaylist = null;
 let playlistState;
 
-//global variable for modalcontent
+
 const modal = document.querySelector(".modal-overlay");
 
 fetch("data/data.json")
@@ -40,7 +40,7 @@ function likePlaylist(likeIcon,likeCount){
 
 }
 function displayModal(playlist){
-    //header
+    
     modal.querySelector(".playlist-header img").src = playlist.playlist_art;
     modal.querySelector(".playlist-header h2").textContent = playlist.playlist_name;
     modal.querySelector(".playlist-header p").textContent = `Created by ${playlist.playlist_author}`;
@@ -84,12 +84,12 @@ modalOverlay.addEventListener("click",(event) =>{
 });
 
 function updateContent(playlist,modalContent){
-    //header
+   
     modalContent.querySelector(".playlist-header img").src = playlist.playlist_art;
     modalContent.querySelector(".playlist-header h2").textContent = playlist.playlist_name;
     modalContent.querySelector(".playlist-header p").textContent = `Created by ${playlist.playlist_author}`;
 
-    //songs
+   
     const songList = modal.querySelector(".song-list");
     songList.innerHTML = "";
     playlist.songs.forEach(song =>{
@@ -135,8 +135,9 @@ function handleFormSubmit(e) {
   const author = document.getElementById("playlist-author").value;
 
   const songs = Array.from(document.querySelectorAll(".song-input")).map(songDiv => {
+    console.log(songDiv)
     return {
-      song_title: songDiv.querySelector(".song-title-form").value,
+      song_title: songDiv.querySelector(".song-title").value,
       artist: songDiv.querySelector(".song-artist").value,
       duration: songDiv.querySelector(".duration").value,
     };
@@ -169,11 +170,8 @@ function handleFormSubmit(e) {
       <input placeholder="Duration" class="duration" required /> 
     </div>
   `;
-
-  // Hide the form after submission
   document.getElementById("playlist-form").classList.add("hidden");
 }
-
 function showForm() {
   const formContent = document.getElementById("playlist-form");
   formContent.classList.remove("hidden");
@@ -182,7 +180,7 @@ function showForm() {
 document.getElementById("playlist-form").addEventListener("submit", handleFormSubmit);
 
 document.getElementById("create-new").addEventListener("click", () => {
-  showForm();
+  showForm(); 
 });
 
 
@@ -204,9 +202,8 @@ function displaySinglePlaylist(playlist){
             <button class ="delete-btn"> 🗑️ Delete </button>
             <button class ="edit-btn"> ✏️ Edit </button>
             </div>
-
     `;
-    //like
+   
     const likeIcon = card.querySelector(".fa-heart");
     const likeCount = card.querySelector(".like-count");
     likePlaylist(likeIcon,likeCount);
@@ -215,17 +212,19 @@ function displaySinglePlaylist(playlist){
     displayModal(playlist);
     });
     container.appendChild(card);
-    //delete
+   
     const deleteBtn = card.querySelector(".delete-btn");
     deleteBtn.addEventListener("click",(e) => {
         e.stopPropagation();
         card.remove();
     });
 
-    //edit section
+    
     const editBtn = card.querySelector(".edit-btn");
     editBtn.addEventListener("click",(e) => {
+        showForm();
         e.stopPropagation();
+        
 
         document.getElementById("playlist-name").value = playlist.playlist_name;
         document.getElementById("playlist-author").value = playlist.playlist_author;
@@ -246,6 +245,7 @@ function displaySinglePlaylist(playlist){
         });
         editingPlaylist = playlist;
 });
+
 
 }
 

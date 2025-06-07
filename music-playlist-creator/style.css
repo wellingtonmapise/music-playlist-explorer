@@ -10,7 +10,6 @@ body {
 }
 
 footer{
-    /* background-color: gray; */
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -26,7 +25,6 @@ footer{
 .playlist-cards{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    /* grid-template-columns: repeat(4,1fr); */
     max-width: 1200px;
     gap: 30px;
     margin: 0 auto;
@@ -38,14 +36,10 @@ footer{
 }
 
 .playlist-card{
-    /* width: 300px;
-    height:400px; */
     background: linear-gradient(0.25turn, #1e201e, #f2f1f2, #1e201e);
-    /* border: 1px solid #ccc; */
     text-align: left;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
 }
@@ -209,9 +203,6 @@ margin-bottom: 24px;
     font-weight: bold;
 }
 
-
-
-
 #main-card{
     display: flex;
     flex-wrap: wrap;
@@ -282,7 +273,6 @@ margin-bottom: 24px;
     gap: 40px;
     max-width: 900px;
     justify-content: center;
-    /* background-color: white; */
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     background: linear-gradient(0.25turn, #182222, #f2f1f2, #0a4815);
